@@ -16,4 +16,3 @@ prerequisites: rust, opencd
 Troubleshooting:
 
 * try updating: `rustup update`
-
