@@ -4,9 +4,9 @@
 
 use panic_halt as _;
 
+use crate::hal::{pac, prelude::*};
 use cortex_m_rt as rt;
 use stm32f4xx_hal as hal;
-use crate::hal::{pac, prelude::*};
 
 fn led_button_control() -> ! {
     let peripherals = pac::Peripherals::take().unwrap();
