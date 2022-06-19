@@ -6,6 +6,22 @@ authors = [
     "Konrad Krenzlin <git@krenzlin.com>",
 ]
 edition = "2021"
+rust-version = "1.61.0"
+categories = [
+    "embedded",
+    "hardware-support",
+    "no-std",
+]
+description = """
+A simple press button to light LED example using Rust \
+on an embedded device, the NUCLEO-F446RE
+"""
+keywords = [
+    "arm",
+    "cortex-m",
+    "stm32f4xx",
+    "hal",
+]
 
 [dependencies]
 cortex-m-rt = "0.7.1"
@@ -13,6 +29,7 @@ panic-halt = "0.2.0"
 stm32f4xx-hal = { version = "0.13.2", features = ["stm32f446"] }
 
 [profile.release]
+debug = true      # debug symbols are stored on host, not target
 codegen-units = 1 # better optimizations
 lto = true        # link time optimizations
 opt-level = "s"   # optimize for size
